@@ -76,10 +76,10 @@ bool PointGreyCamera::setNewConfiguration(pointgrey_camera_driver::PointGreyConf
       PixelFormat fmt7PixFmt;
       PointGreyCamera::getFormat7PixelFormatFromString(config.format7_color_coding, fmt7PixFmt);
       // Oh no, these all need to be converted into uints, so my pass by reference trick doesn't work
-      uint16_t uwidth = (uint16_t)config.format7_roi_width;
-      uint16_t uheight = (uint16_t)config.format7_roi_height;
-      uint16_t uoffsetx = (uint16_t)config.format7_x_offset;
-      uint16_t uoffsety = (uint16_t)config.format7_y_offset;
+      uint16_t uwidth = (uint16_t)1280; //config.format7_roi_width;
+      uint16_t uheight = (uint16_t)720; //config.format7_roi_height;
+      uint16_t uoffsetx = (uint16_t)160; //config.format7_x_offset;
+      uint16_t uoffsety = (uint16_t)240; //config.format7_y_offset;
       retVal &= PointGreyCamera::setFormat7(fmt7Mode, fmt7PixFmt, uwidth, uheight, uoffsetx, uoffsety);
       config.format7_roi_width = uwidth;
       config.format7_roi_height = uheight;
